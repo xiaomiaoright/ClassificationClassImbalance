@@ -208,3 +208,106 @@ In the next iteration, the new classifier focuses on or **places more weight to 
     - **Advantages**
        - It is 10 times faster than the normal Gradient Boosting as it implements parallel processing. It is highly flexible as users can define custom optimization objectives and evaluation criteria, has an inbuilt mechanism to handle missing values.
        - Unlike gradient boosting which stops splitting a node as soon as it encounters a negative loss, XG Boost splits up to the maximum depth specified and prunes the tree backward and removes splits beyond which there is an only negative loss.
+
+****
+****
+## imbalanced-learn API
+
+### Installation
+
+    pip install -U imbalanced-learn
+
+or use Anaconda
+
+    conda install -c conda-forge imbalanced-learn
+
+### [imbalanced-learn API](https://imbalanced-learn.readthedocs.io/en/stable/api.html#module-imblearn.under_sampling)
+
+#### [imblearn.under_sampling](https://imbalanced-learn.readthedocs.io/en/stable/api.html#module-imblearn.under_sampling)
+
+The imblearn.under_sampling provides methods to under-sample a dataset.
+
+* Prototype generation
+
+The _imblearn.under_sampling.prototype_generation_ submodule contains methods that generate new samples in order to balance the dataset.
+
+* Prototype generation
+
+Method | Description
+-------|------------
+under_sampling.CondensedNearestNeighbour([…])|Class to perform under-sampling based on the condensed nearest neighbour method.
+under_sampling.EditedNearestNeighbours([…])|Class to perform under-sampling based on the edited nearest neighbour method.
+under_sampling.RepeatedEditedNearestNeighbours([…])|Class to perform under-sampling based on the repeated edited nearest neighbour method.
+under_sampling.AllKNN([sampling_strategy, …])|Class to perform under-sampling based on the AllKNN method.
+under_sampling.InstanceHardnessThreshold([…])| Class to perform under-sampling based on the instance hardness threshold.
+under_sampling.NearMiss([sampling_strategy, …])| Class to perform under-sampling based on NearMiss methods.
+under_sampling.NeighbourhoodCleaningRule([…])| Class performing under-sampling based on the neighbourhood cleaning rule.
+under_sampling.OneSidedSelection([…])| Class to perform under-sampling based on one-sided selection method.
+under_sampling.RandomUnderSampler([…])| Class to perform random under-sampling.
+under_sampling.TomekLinks([…])| Class to perform under-sampling by removing Tomek’s links.
+
+
+#### [imblearn.over_sampling](https://imbalanced-learn.readthedocs.io/en/stable/api.html#module-imblearn.over_sampling)
+
+Method | Description
+-------|------------
+over_sampling.ADASYN([sampling_strategy, …])|Perform over-sampling using Adaptive Synthetic (ADASYN) sampling approach for imbalanced datasets.
+over_sampling.BorderlineSMOTE([…])|Over-sampling using Borderline SMOTE.
+over_sampling.KMeansSMOTE([…])|Apply a KMeans clustering before to over-sample using SMOTE.
+over_sampling.RandomOverSampler([…])|Class to perform random over-sampling.
+over_sampling.SMOTE([sampling_strategy, …])|Class to perform over-sampling using SMOTE.
+over_sampling.SMOTENC(categorical_features)|Synthetic Minority Over-sampling Technique for Nominal and Continuous (SMOTE-NC).
+over_sampling.SVMSMOTE([sampling_strategy, …])|Over-sampling using SVM-SMOTE.
+
+
+
+#### [imblearn.combine](https://imbalanced-learn.readthedocs.io/en/stable/api.html#module-imblearn.combine)
+
+The imblearn.combine provides methods which combine over-sampling and under-sampling.
+
+Method | Description
+-------|------------
+combine.SMOTEENN([sampling_strategy, …])|Class to perform over-sampling using SMOTE and cleaning using ENN.
+combine.SMOTETomek([sampling_strategy, …])|Class to perform over-sampling using SMOTE and cleaning using Tomek links.
+
+
+
+#### [imblearn.ensemble](https://imbalanced-learn.readthedocs.io/en/stable/api.html#module-imblearn.ensemble)
+
+The imblearn.ensemble module include methods generating under-sampled subsets combined inside an ensemble.
+
+Method | Description
+-------|------------
+ensemble.BalanceCascade(**kwargs)|Create an ensemble of balanced sets by iteratively under-sampling the imbalanced dataset using an estimator.
+ensemble.BalancedBaggingClassifier([…])|A Bagging classifier with additional balancing.
+ensemble.BalancedRandomForestClassifier([…])|A balanced random forest classifier.
+ensemble.EasyEnsemble(**kwargs)|Create an ensemble sets by iteratively applying random under-sampling.
+ensemble.EasyEnsembleClassifier([…])|Bag of balanced boosted learners also known as EasyEnsemble.
+ensemble.RUSBoostClassifier([…])|Random under-sampling integrating in the learning of an AdaBoost classifier.
+
+
+#### [imblearn.keras: Batch generator for Keras](https://imbalanced-learn.readthedocs.io/en/stable/api.html#module-imblearn.keras)
+
+The imblearn.keras provides utilities to deal with imbalanced dataset in keras.
+
+Method | Description
+-------|------------
+keras.BalancedBatchGenerator(X, y[, …])|Create balanced batches when training a keras model.
+keras.balanced_batch_generator(X, y[, …])|Create a balanced batch generator to train keras model.
+
+#### [imblearn.tensorflow: Batch generator for TensorFlow](https://imbalanced-learn.readthedocs.io/en/stable/api.html#module-imblearn.tensorflow)
+
+The imblearn.tensorflow provides utilities to deal with imbalanced dataset in tensorflow.
+
+Method | Description
+-------|------------
+tensorflow.balanced_batch_generator(X, y[, …])|Create a balanced batch generator to train keras model.
+
+#### [imblearn.pipeline: Pipeline](https://imbalanced-learn.readthedocs.io/en/stable/api.html#module-imblearn.pipeline)
+
+The imblearn.pipeline module implements utilities to build a composite estimator, as a chain of transforms, samples and estimators.
+
+Method | Description
+-------|------------
+pipeline.Pipeline(steps[, memory, verbose])|Pipeline of transforms and resamples with a final estimator
+pipeline.make_pipeline(\*steps, \*\*kwargs)|Construct a Pipeline from the given estimators
