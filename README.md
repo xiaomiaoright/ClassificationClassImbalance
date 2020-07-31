@@ -76,7 +76,7 @@ Resampling techinques are used to either increasing the frequency of the minorit
 
    This technique is followed to avoid overfitting which occurs when exact replicas of minority instances are added to the main dataset. A subset of data is taken from the minority class as an example and then new synthetic similar instances are created. These synthetic instances are then added to the original dataset. The new dataset is used as a sample to train the classification models.
 
-   ![image](Images\SMOTE.webp)
+   ![image](https://github.com/xiaomiaoright/ClassificationClassImbalance/blob/master/Images/SMOTE.webp)
 
    - **Advantages**
 
@@ -108,7 +108,7 @@ To address the imbalanced classes challenge in classification problmes, modifyin
 
     Bagging is used for reducing overfitting in order to create strong learners for generating accurate predictions. Unlike boosting, bagging allows replacement in the bootstrapped sample.
 
-    ![image](Images\Bagging.webp)
+    ![image](https://github.com/xiaomiaoright/ClassificationClassImbalance/blob/master/Images/Bagging.webp)
 
     **Example of Bagging**
 
@@ -156,7 +156,7 @@ In the next iteration, the new classifier focuses on or **places more weight to 
 
     After each round, it gives more focus to examples that are harder to classify.  The quantity of focus is measured by a weight, which initially is equal for all instances. After each iteration, the weights of misclassified instances are increased and the weights of correctly classified instances are decreased.
 
-    ![image](Images\Adaboosting.webp)
+    ![image](https://github.com/xiaomiaoright/ClassificationClassImbalance/blob/master/Images/AdaBoosting.webp)
 
     **Example of Ada Boosting**
 
@@ -187,7 +187,7 @@ In the next iteration, the new classifier focuses on or **places more weight to 
 
     At every step, the residual of the loss function is calculated using the **Gradient Descent Method** and the new residual becomes a target variable for the subsequent iteration.
 
-    ![image](Images\GradientBoosting.webp)
+    ![image](https://github.com/xiaomiaoright/ClassificationClassImbalance/blob/master/Images/GradientBoosting.webp)
 
     **Example of Gradient Boosting**
 
